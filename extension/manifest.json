@@ -1,0 +1,20 @@
+{
+  "manifest_version": 3,
+  "name": "Image and Table Downloader",
+  "version": "1.0",
+  "description": "Download all images or tables from the current tab.",
+  "permissions": ["scripting", "downloads", "activeTab", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "pages/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
